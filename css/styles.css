@@ -1,0 +1,97 @@
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 4em;
+    margin: 0;
+    background-color: #a34af1;
+}
+
+.headerTitle {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #a3faf1;
+}
+
+.headerLinks {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 3;
+    padding-right: 1.6em;
+}
+
+.headerLink {
+    display: inline-block;
+    padding: 0 1.4em;
+}
+
+.hero {
+    width: 100%;
+    height: 20em;
+    background-color: #000;
+}
+
+#about {
+    background-color: #23aaf1;
+}
+
+#projects {
+    background-color: #f34691;
+}
+
+#skills {
+    background-color: #a3faf1;
+}
+
+.title {
+    text-align: center;
+    padding: 3em 2em;
+}
+
+.sectionContent {
+    padding: 0 2em 2.4em 2em;
+}
+
+.project {
+    margin-top: 3.4em;
+}
+
+.project:first-of-type {
+    margin-top: 0;
+}
+
+.projectContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 0.8em;
+}
+
+.projectImage {
+    flex: 1;
+    height: 10em;
+    min-width: 16em;
+    background-color: blanchedalmond;
+}
+
+.projectText {
+    flex: 1;
+    min-width: 16em;
+    padding: 1em;
+}
