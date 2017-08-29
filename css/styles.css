@@ -4,11 +4,16 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #ffcd3a;
 }
 
 div, h2, p {
     margin: 0;
     padding: 0;
+}
+
+p {
+    font-family: 'Work Sans', sans-serif;
 }
 
 .header {
@@ -17,7 +22,7 @@ div, h2, p {
     width: 100%;
     height: 4em;
     margin: 0;
-    background-color: #a34af1;
+    background-color: #2c2c2c;
 }
 
 .headerTitle {
@@ -25,7 +30,7 @@ div, h2, p {
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: #a3faf1;
+    color: #ffcd3a;
 }
 
 .headerLinks {
@@ -34,6 +39,7 @@ div, h2, p {
     align-items: center;
     flex: 3;
     padding-right: 1.6em;
+    color: #ffcd3a;
 }
 
 .headerLink {
@@ -47,25 +53,16 @@ div, h2, p {
     background-color: #000;
 }
 
-#about {
-    background-color: #23aaf1;
-}
-
-#projects {
-    background-color: #f34691;
-}
-
-#skills {
-    background-color: #a3faf1;
-}
-
 .title {
     text-align: center;
     padding: 3em 2em;
+    font-family: 'Baloo Bhaijaan', cursive;
 }
 
 .sectionContent {
-    padding: 0 2em 2.4em 2em;
+    padding: 0 0 2.4em 0;
+    margin: 0 2em 0 2em;
+    border-bottom: 1px solid #2c2c2c;
 }
 
 .project {
@@ -74,6 +71,10 @@ div, h2, p {
 
 .project:first-of-type {
     margin-top: 0;
+}
+
+.project h2, a {
+    font-family: "Work Sans", sans-serif;
 }
 
 .projectContent {
@@ -87,11 +88,151 @@ div, h2, p {
     flex: 1;
     height: 10em;
     min-width: 16em;
-    background-color: blanchedalmond;
+    background-color: darkgray;
 }
 
 .projectText {
     flex: 1;
     min-width: 16em;
     padding: 1em;
+}
+
+#skillContainer {
+    position: relative;
+    height: 36vw;
+}
+
+.skill {
+    position: absolute;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c2c;
+    border: 8px solid #2c2c2c;
+    color: #ffcd3a;
+}
+
+.skill p {
+    font-family: 'Work Sans', sans-serif
+}
+
+/************ SKILL-BUBBLES ************/
+
+#java {
+    bottom: 1%;
+    left: 33.5%;
+    width: 11vw;
+    height: 11vw;
+}
+
+#android {
+    top: 2%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 7vw;
+    height: 7vw;
+}
+
+#javascript {
+    top: 6%;
+    right: 28%;
+    width: 13vw;
+    height: 13vw;
+}
+
+#react {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10vw;
+    height: 10vw;
+}
+
+#html5 {
+    bottom: 39%;
+    left: 31%;
+    width: 7vw;
+    height: 7vw;
+}
+
+#css {
+    bottom: 4%;
+    right: 43%;
+    width: 6vw;
+    height: 6vw;
+}
+
+#php {
+    bottom: 1%;
+    right: 36%;
+    width: 4vw;
+    height: 4vw;
+}
+
+#mysql {
+    top: 10%;
+    left: 36%;
+    width: 6vw;
+    height: 6vw;
+}
+
+#mongodb {
+    bottom: 21%;
+    right: 33.5%;
+    width: 8vw;
+    height: 8vw;
+}
+
+/************ ANIMATIONS ************/
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+.bounceInSlow {
+    animation-name: bounceIn;
+    animation-duration: 4s;
+}
+
+.bounceInNormal {
+    animation-name: bounceIn;
+    animation-duration: 3s;
+}
+
+.bounceInFast {
+    animation-name: bounceIn;
+    animation-duration: 2s;
 }
