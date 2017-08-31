@@ -9,24 +9,7 @@
   function scrollToDiv(destination, duration, callback) {
     const startPosition = window.pageYOffset;
     const startTime = new Date().getTime();
-
-    const documentHeight = Math.max(
-      document.body.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.clientHeight,
-      document.documentElement.scrollHeight,
-      document.documentElement.offsetHeight
-    );
-
-    const windowHeight =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.getElementsByTagName('body')[0].clientHeight;
-
-    const destinationOffset = Math.round(
-      documentHeight - destination.offsetTop < windowHeight ?
-        documentHeight - windowHeight : destination.offsetTop
-    );
+    const destinationOffset = destination.offsetTop;
 
     if ('requestAnimationFrame' in window === false) {
       window.scrollTo(0, destinationOffset);
@@ -50,11 +33,10 @@
     scroll();
   }
 
-  function checkSkillImagesInView() {
-    const windowTop = window.pageYOffset;
+  function checkSkillImagesInView(windowTop) {
     const windowBottom = windowTop + window.innerHeight;
-    const elementTop = skillsContainer.offsetTop;
-    const elementBottom = elementTop + skillsContainer.offsetHeight;
+    const elementTop = skillContainer.offsetTop;
+    const elementBottom = elementTop + skillContainer.offsetHeight;
 
     if (elementTop <= windowBottom && elementBottom >= windowTop ) {
       for (var i = 0; i < skillElements.length; i++) {
@@ -75,7 +57,55 @@
     }
   }
 
+  function handleScroll() {
+    var windowTop = window.pageYOffset;
+    var header = document.getElementsByClassName("header")[0];
+    var headerHeight = header.offsetHeight;
+
+    // Hide or show header after certain amount of scrolling
+    if(Math.abs(lastWindowTop - windowTop) <= hideThreshold) return;
+
+    if ((windowTop > lastWindowTop) && (windowTop > headerHeight)) {
+      header.className = "header headerHidden";
+    } else {
+      header.className = "header";
+    }
+
+    lastWindowTop = windowTop;
+    checkSkillImagesInView(windowTop);
+  }
+
+  function initializeEye() {
+    var iris = document.createElement("div");
+    var spot = document.createElement("span");
+
+    iris.className = "iris";
+    iris.appendChild(spot);
+    eyeContainer.appendChild(iris);
+
+    return {iris: iris, spot: spot};
+  }
+
+  function fixEyeToCursor(event) {
+    var x = event.pageX;
+    var y = event.pageY;
+    var offsets = eye.spot.getBoundingClientRect();
+    var left = (offsets.left - x);
+    var top = (offsets.top - y);
+    var rad = Math.atan2(top, left);
+
+    eye.iris.style.transform = "rotate(" + rad + "rad)";
+    eye.iris.style.webkitTransform = "rotate(" + rad + "rad)";
+  }
+
   var links = document.getElementsByClassName("headerLink");
+  var eyeContainer = document.getElementsByClassName("eyeContainer")[0];
+  var eye = initializeEye();
+  var skillContainer = document.getElementsByClassName("skillContainer")[0];
+  var skillElements = document.getElementsByClassName("skill");
+
+  var lastWindowTop = 0;
+  var hideThreshold = 10;
 
   links[0].addEventListener("click", function () {
     scrollToDiv(document.getElementById("about"), 280, null);
@@ -89,10 +119,9 @@
   links[3].addEventListener("click", function () {
     scrollToDiv(document.getElementById("about"), 280, null);
   });
-
-  var skillsContainer = document.getElementById("skillContainer");
-  var skillElements = document.getElementsByClassName("skill");
-  window.addEventListener("scroll", checkSkillImagesInView);
+  
+  window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", checkSkillImagesInView);
+  window.addEventListener("mousemove", fixEyeToCursor);
 
 })();
