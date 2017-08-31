@@ -9,10 +9,34 @@
   function scrollToDiv(destination, duration, callback) {
     const startPosition = window.pageYOffset;
     const startTime = new Date().getTime();
-    const destinationOffset = destination.offsetTop;
 
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight,
+      document.documentElement.offsetHeight
+    );
+
+    const windowHeight =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.getElementsByTagName('body')[0].clientHeight;
+    
+    // Prevent from scrolling below the end of document
+    var destinationOffset = documentHeight - destination.offsetTop < windowHeight ?
+      documentHeight - windowHeight : destination.offsetTop;
+
+    var requestID;
+
+    if (Math.round(window.pageYOffset) > destinationOffset) {
+      destinationOffset -= header.offsetHeight;
+    }
+
+    // Move to destination without animation if 'requestAnimationFrame'
+    // is disabled
     if ('requestAnimationFrame' in window === false) {
-      window.scrollTo(0, destinationOffset);
+      window.scroll(0, destinationOffset);
       if (callback) callback();
       return null;
     }
@@ -22,15 +46,23 @@
       const time = Math.min(1, ((now - startTime) / duration));
       window.scroll(0, Math.ceil((time * (destinationOffset - startPosition)) + startPosition));
 
-      if (window.pageYOffset === destinationOffset) {
+      if (Math.round(window.pageYOffset) === destinationOffset) {
+        console.log("STOPPED");
         if (callback) callback();
         return;
       }
 
-      requestAnimationFrame(scroll);
+      requestID = requestAnimationFrame(scroll);
     }
 
     scroll();
+
+    // Fallback if animation loop wouldn't otherwise stop
+    setTimeout(function () {
+      if (requestID) {
+        cancelAnimationFrame(requestID);
+      }
+    }, 2000);
   }
 
   function checkSkillImagesInView(windowTop) {
@@ -98,6 +130,7 @@
     eye.iris.style.webkitTransform = "rotate(" + rad + "rad)";
   }
 
+  var header = document.getElementsByClassName("header")[0];
   var links = document.getElementsByClassName("headerLink");
   var eyeContainer = document.getElementsByClassName("eyeContainer")[0];
   var eye = initializeEye();
@@ -117,7 +150,7 @@
     scrollToDiv(document.getElementById("skills"), 280, null);
   });
   links[3].addEventListener("click", function () {
-    scrollToDiv(document.getElementById("about"), 280, null);
+    scrollToDiv(document.getElementById("contact"), 280, null);
   });
   
   window.addEventListener("scroll", handleScroll);
