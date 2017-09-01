@@ -138,7 +138,7 @@
   var skillElements = document.getElementsByClassName("skill");
 
   var lastWindowTop = 0;
-  var hideThreshold = 10;
+  var hideThreshold = 20;
 
   links[0].addEventListener("click", function () {
     scrollToDiv(document.getElementById("about"), 280, null);
