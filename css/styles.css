@@ -1,15 +1,10 @@
-html {
-    width: 100%;
-    height: 100%;
-}
-
 body {
     position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffcd3a;
+    background-color: #f4f7ef;
 }
 
 div, h2, p {
@@ -21,21 +16,25 @@ p {
     font-family: 'Work Sans', sans-serif;
 }
 
+.wrapper {
+    width: 100%;
+}
+
 .header {
     display: flex;
     flex-direction: row;
     position: fixed;
     width: 100%;
-    height: 14vh;
+    min-height: 4em;
     top: 0;
     margin: 0;
     transition: top 0.2s ease-in-out;
-    background-color: #2c2c2c;
+    background-color: #2a302e;
     z-index: 101;
 }
 
 .headerHidden {
-    top: -14vh;
+    top: -8em;
 }
 
 .headerTitle {
@@ -44,7 +43,13 @@ p {
     justify-content: flex-start;
     align-items: center;
     padding: 0 1.4em;
-    color: #ffcd3a;
+    color: #f4f7ef;
+    cursor: default;
+}
+
+.headerTitle p {
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-size: 1.2em;
 }
 
 .headerLinks {
@@ -54,7 +59,7 @@ p {
     align-items: center;
     flex: 2;
     padding-right: 1.6em;
-    color: #ffcd3a;
+    color: #f4f7ef;
 }
 
 .headerLink {
@@ -64,26 +69,30 @@ p {
 }
 
 .headerLink:hover {
-    color: #6e6e6e;
+    color: #8be835;
 }
 
 .headerLink:focus {
-    color: #ffcd3a;
+    color: #f4f7ef;
     outline: none;
 }
 
 #top {
-    background-color: #2c2c2c;
-    padding: 2em;
+    background-color: #2a302e;
+}
+
+#top, #about, #projects, #skills, #contact {
+    width: 100%;
 }
 
 .eyeContainer {
     display: flex;
     position: relative;
-    height: 30vw;
-    min-height: 20em;
+    height: 18vw;
     justify-content: center;
     align-items: center;
+    margin-top: 4em;
+    padding: 1vw;
 }
 
 .topTextContainer {
@@ -91,20 +100,29 @@ p {
     justify-content: center;
     align-items: center;
     font-family: "Work Sans", sans-serif;
-    color: #ffcd3a;
-    padding-bottom: 2em;
+    color: #8be835;
+    padding: 0 1vw 2.5vw 1vw;
+    margin-top: -1.8vw;
+}
+
+.topTextContainer span {
+    color: #e2af2d;
 }
 
 .title {
     text-align: center;
-    padding: 3em 2em;
+    padding: 2.6em 2em 3.2em 2em;
     font-family: 'Baloo Bhaijaan', cursive;
 }
 
+.firstTitle {
+    padding: 3.6em 2em 1em 2em;
+}
+
 .sectionContent {
-    padding: 0 0 2.4em 0;
+    padding: 0 0 3.8em 0;
     margin: 0 2em 0 2em;
-    border-bottom: 1px solid #2c2c2c;
+    border-bottom: 1px solid #2a302e;
 }
 
 .removeBorder {
@@ -125,7 +143,7 @@ p {
 }
 
 .aboutImage img {
-    width: 56%;
+    width: 36%;
     height: auto;
     margin: auto;
 }
@@ -156,7 +174,6 @@ p {
 
 .projectTitle h2, a {
      font-family: "Work Sans", sans-serif;
-     color: #2c2c2c;
      text-decoration: none;
  }
 
@@ -166,8 +183,12 @@ p {
     padding: 0;
 }
 
+.projectTitle h2 {
+    color: #d553ef;
+}
+
 .projectTitle a:hover {
-    color: #6e6e6e;
+    color: #8be835 !important;
 }
 
 .projectTitle a:focus {
@@ -175,7 +196,7 @@ p {
 }
 
 .projectTitle a:visited {
-    color: #2c2c2c;
+    color: #2a302e;
 }
 
 .projectContent {
@@ -185,16 +206,17 @@ p {
     margin-top: 0.8em;
 }
 
-.projectImage {
+.projectImageContainer {
     flex: 1;
     min-width: 20em;
     text-align: center;
 }
 
-.projectImage img {
+.projectImage {
     display: block;
-    width: 70%;
+    width: auto;
     height: auto;
+    max-height: 18.5em;
     margin: auto;
 }
 
@@ -203,14 +225,8 @@ p {
     height: auto;
 }
 
-.portrait {
-    max-height: 18.5em;
-}
-
-.portrait img {
-    height: 100%;
-    width: auto;
-    margin: auto;
+.landscape {
+    width: 70%;
 }
 
 .projectText {
@@ -230,9 +246,9 @@ p {
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    background-color: #2c2c2c;
-    border: 8px solid #2c2c2c;
-    color: #ffcd3a;
+    background-color: #2a302e;
+    border: 8px solid #2a302e;
+    color: #e2af2d;
 }
 
 .skill p {
@@ -262,15 +278,15 @@ p {
     font-size: 3em;
     padding: 0.5em;
     text-decoration: none;
-    color: #2c2c2c;
+    color: #2a302e;
 }
 
 .contactLinks a:visited {
-    color: #2c2c2c;
+    color: #2a302e;
 }
 
 .contactLinks a:hover {
-    color: #6e6e6e;
+    color: #8be835;
     outline: none;
 }
 
@@ -284,8 +300,8 @@ p {
     height: 4em;
     justify-content: center;
     align-items: center;
-    background-color: #2c2c2c;
-    color: #ffcd3a;
+    background-color: #2a302e;
+    color: #f4f7ef;
 }
 
 /************ EYE ************/
@@ -296,9 +312,9 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 14vw;
-    height: 14vw;
-    border: 1em solid #ffcd3a;
+    width: 10vw;
+    height: 10vw;
+    border: 1.2vw solid #d553ef;
     border-radius: 0 70%;
     transform: rotate(-45deg);
     margin: auto;
@@ -306,23 +322,23 @@ p {
 }
 
 .iris {
-    width: 9vw;
-    height: 9vw;
+    width: 6vw;
+    height: 6vw;
     position: relative;
-    border: 0.6em solid #ffcd3a;
+    border: 1vw solid #e2af2d;
     border-radius: 24vw;
     margin: auto;
 }
 
 .iris span {
     display: block;
-    width: 3vw;
-    height: 3vw;
+    width: 2vw;
+    height: 2vw;
     position: absolute;
     top: 50%;
     left: 0;
     border-radius: 24vw;
-    background: #ffcd3a;
+    background: #8be835;
 }
 
 /************ SKILL-BUBBLES ************/
@@ -450,11 +466,29 @@ p {
 @media screen and (max-width: 600px) {
 
     .header {
-        height: 6.4em;
+        min-height: 6em;
     }
 
-    .headerHidden {
-        top: -6.4em;
+    .eyeContainer {
+        margin-top: 6em;
+        padding: 1vw;
+    }
+
+    .outerEye {
+        width: 15vw;
+        height: 15vw;
+        border: 2vw solid #d553ef;
+    }
+
+    .iris {
+        width: 9vw;
+        height: 9vw;
+        border: 1.8vw solid #e2af2d;
+    }
+
+    .iris span {
+        width: 4vw;
+        height: 4vw;
     }
 
     .headerLinks {
@@ -463,10 +497,20 @@ p {
         justify-content: flex-start;
         align-items: flex-end;
         padding: 0;
+        color: #d553ef;
+    }
+
+    .aboutImage img {
+        width: 75%;
     }
 }
 
 @media screen and (max-width: 800px) {
+
+    .eyeContainer {
+        height: 26vw;
+        padding: 2vw;
+    }
 
     .skillContainer {
         height: 60vw;

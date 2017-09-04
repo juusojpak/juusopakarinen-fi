@@ -29,8 +29,10 @@
 
     var requestID;
 
-    if (Math.round(window.pageYOffset) > destinationOffset) {
-      destinationOffset -= header.offsetHeight;
+    // Add header height to destination offset when scrolling down
+    if ((Math.round(window.pageYOffset) < destinationOffset) &&
+      (documentHeight - destination.offsetTop >= windowHeight)) {
+      destinationOffset += document.getElementsByClassName("header")[0].offsetHeight;
     }
 
     // Move to destination without animation if 'requestAnimationFrame'
@@ -47,7 +49,6 @@
       window.scroll(0, Math.ceil((time * (destinationOffset - startPosition)) + startPosition));
 
       if (Math.round(window.pageYOffset) === destinationOffset) {
-        console.log("STOPPED");
         if (callback) callback();
         return;
       }
