@@ -4,7 +4,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #f4f7ef;
+    background-color: #f4f5f6;
 }
 
 div, h2, p {
@@ -43,7 +43,7 @@ p {
     justify-content: flex-start;
     align-items: center;
     padding: 0 1.4em;
-    color: #f4f7ef;
+    color: #f4f5f6;
     cursor: default;
 }
 
@@ -59,7 +59,7 @@ p {
     align-items: center;
     flex: 2;
     padding-right: 1.6em;
-    color: #f4f7ef;
+    color: #f4f5f6;
 }
 
 .headerLink {
@@ -69,11 +69,11 @@ p {
 }
 
 .headerLink:hover {
-    color: #8be835;
+    color: #ff9e28;
 }
 
 .headerLink:focus {
-    color: #f4f7ef;
+    color: #f4f5f6;
     outline: none;
 }
 
@@ -100,13 +100,13 @@ p {
     justify-content: center;
     align-items: center;
     font-family: "Work Sans", sans-serif;
-    color: #8be835;
+    color: #ff9e28;
     padding: 0 1vw 2.5vw 1vw;
     margin-top: -1.8vw;
 }
 
 .topTextContainer span {
-    color: #e2af2d;
+    color: #f4f5f6;
 }
 
 .title {
@@ -173,22 +173,23 @@ p {
 }
 
 .projectTitle h2, a {
-     font-family: "Work Sans", sans-serif;
-     text-decoration: none;
+    font-family: "Work Sans", sans-serif;
+    text-decoration: none;
  }
 
 .projectTitle a {
     font-size: 1.6em;
     margin-left: 0.6em;
     padding: 0;
+    color: #2a302e;
 }
 
 .projectTitle h2 {
-    color: #d553ef;
+    color: #ef9721;
 }
 
 .projectTitle a:hover {
-    color: #8be835 !important;
+    color: #ff9e28 !important;
 }
 
 .projectTitle a:focus {
@@ -248,7 +249,7 @@ p {
     align-items: center;
     background-color: #2a302e;
     border: 8px solid #2a302e;
-    color: #e2af2d;
+    color: #ff9e28;
 }
 
 .skill p {
@@ -286,7 +287,7 @@ p {
 }
 
 .contactLinks a:hover {
-    color: #8be835;
+    color: #ff9e28;
     outline: none;
 }
 
@@ -301,7 +302,7 @@ p {
     justify-content: center;
     align-items: center;
     background-color: #2a302e;
-    color: #f4f7ef;
+    color: #f4f5f6;
 }
 
 /************ EYE ************/
@@ -314,7 +315,7 @@ p {
     right: 0;
     width: 10vw;
     height: 10vw;
-    border: 1.2vw solid #d553ef;
+    border: 1.2vw solid #ff9e28;
     border-radius: 0 70%;
     transform: rotate(-45deg);
     margin: auto;
@@ -325,7 +326,7 @@ p {
     width: 6vw;
     height: 6vw;
     position: relative;
-    border: 1vw solid #e2af2d;
+    border: 1vw solid #ff9e28;
     border-radius: 24vw;
     margin: auto;
 }
@@ -338,7 +339,7 @@ p {
     top: 50%;
     left: 0;
     border-radius: 24vw;
-    background: #8be835;
+    background: #ff9e28;
 }
 
 /************ SKILL-BUBBLES ************/
@@ -477,13 +478,13 @@ p {
     .outerEye {
         width: 15vw;
         height: 15vw;
-        border: 2vw solid #d553ef;
+        border: 2vw solid #ff9e28;
     }
 
     .iris {
         width: 9vw;
         height: 9vw;
-        border: 1.8vw solid #e2af2d;
+        border: 1.8vw solid #ff9e28;
     }
 
     .iris span {
@@ -497,7 +498,7 @@ p {
         justify-content: flex-start;
         align-items: flex-end;
         padding: 0;
-        color: #d553ef;
+        color: #ff9e28;
     }
 
     .aboutImage img {
