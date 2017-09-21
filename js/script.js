@@ -77,13 +77,13 @@
 
         switch (rnd) {
           case 1:
-            skillElements[i].className += " bounceInSlow";
+            skillElements[i].className += " animationSlow";
             break;
           case 2:
-            skillElements[i].className += " bounceInFast";
+            skillElements[i].className += " animationFast";
             break;
           default:
-            skillElements[i].className += " bounceInNormal";
+            skillElements[i].className += " animationNormal";
             break;
         }
       }

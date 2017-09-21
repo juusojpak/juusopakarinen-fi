@@ -25,7 +25,7 @@ p {
     flex-direction: row;
     position: fixed;
     width: 100%;
-    min-height: 4em;
+    height: 6.6em;
     top: 0;
     margin: 0;
     transition: top 0.2s ease-in-out;
@@ -54,17 +54,16 @@ p {
 
 .headerLinks {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 2;
-    padding-right: 1.6em;
-    color: #f4f5f6;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 0;
 }
 
 .headerLink {
     display: inline-block;
     padding: 0 1.4em;
+    color: #f4f5f6;
     cursor: pointer;
 }
 
@@ -88,11 +87,10 @@ p {
 .eyeContainer {
     display: flex;
     position: relative;
-    height: 18vw;
+    height: 10em;
     justify-content: center;
     align-items: center;
-    margin-top: 4em;
-    padding: 1vw;
+    margin-top: 6.6em;
 }
 
 .topTextContainer {
@@ -101,8 +99,8 @@ p {
     align-items: center;
     font-family: "Work Sans", sans-serif;
     color: #ff9e28;
-    padding: 0 1vw 2.5vw 1vw;
-    margin-top: -1.8vw;
+    padding: 0 1em 1.6em 1em;
+    margin-top: -0.8em;
 }
 
 .topTextContainer span {
@@ -111,12 +109,12 @@ p {
 
 .title {
     text-align: center;
-    padding: 2.6em 2em 3.2em 2em;
+    padding: 3em 2em 2em 2em;
     font-family: 'Baloo Bhaijaan', cursive;
 }
 
 .firstTitle {
-    padding: 3.6em 2em 1em 2em;
+    padding: 3em 2em 1em 2em;
 }
 
 .sectionContent {
@@ -143,7 +141,7 @@ p {
 }
 
 .aboutImage img {
-    width: 36%;
+    width: 75%;
     height: auto;
     margin: auto;
 }
@@ -236,20 +234,54 @@ p {
     padding: 1em;
 }
 
+.projectText p {
+    margin: 0.8em 0;
+}
+
+.projectTags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.8em;
+}
+
+.projectTag {
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin: 0.2em 0.5em 0.2em 0;
+    background-color: #ff9e28;
+    border: 1px solid #ff9e28;
+    border-radius: 6px;
+}
+
+.centeredContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .skillContainer {
-    position: relative;
-    height: 36vw;
+    display: flex;
+    flex-direction: column;
+    width: 32em;
+    height: 32em;
 }
 
 .skill {
-    position: absolute;
+    position: relative;
     display: flex;
-    border-radius: 50%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-bottom: 1em;
     background-color: #2a302e;
     border: 8px solid #2a302e;
+    border-radius: 6px;
     color: #ff9e28;
+    overflow: hidden;
 }
 
 .skill p {
@@ -313,9 +345,9 @@ p {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 10vw;
-    height: 10vw;
-    border: 1.2vw solid #ff9e28;
+    width: 6em;
+    height: 6em;
+    border: 0.4em solid #ff9e28;
     border-radius: 0 70%;
     transform: rotate(-45deg);
     margin: auto;
@@ -323,94 +355,67 @@ p {
 }
 
 .iris {
-    width: 6vw;
-    height: 6vw;
+    width: 3em;
+    height: 3em;
     position: relative;
-    border: 1vw solid #ff9e28;
-    border-radius: 24vw;
+    border: 0.8em solid #ff9e28;
+    border-radius: 26em;
     margin: auto;
 }
 
 .iris span {
     display: block;
-    width: 2vw;
-    height: 2vw;
+    width: 1.2em;
+    height: 1.2em;
     position: absolute;
-    top: 50%;
-    left: 0;
-    border-radius: 24vw;
+    top: 30%;
+    left: -6%;
+    border-radius: 26em;
     background: #ff9e28;
 }
 
-/************ SKILL-BUBBLES ************/
+/************ SKILLS ************/
+
+#java, #android, #javascript, #react, #html5, #css, #php, #mysql, #mongodb {
+    height: 2em;
+}
 
 #java {
-    bottom: 1%;
-    left: 33.5%;
-    width: 11vw;
-    height: 11vw;
+    width: 85%;
 }
 
 #android {
-    top: 2%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 7vw;
-    height: 7vw;
+    width: 76%;
 }
 
 #javascript {
-    top: 6%;
-    right: 28%;
-    width: 13vw;
-    height: 13vw;
+    width: 88%;
 }
 
 #react {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 10vw;
-    height: 10vw;
+    width: 82%;
 }
 
 #html5 {
-    bottom: 39%;
-    left: 31%;
-    width: 7vw;
-    height: 7vw;
+    width: 80%;
 }
 
 #css {
-    bottom: 4%;
-    right: 43%;
-    width: 6vw;
-    height: 6vw;
+    width: 84%;
 }
 
 #php {
-    bottom: 1%;
-    right: 36%;
-    width: 4vw;
-    height: 4vw;
+    width: 64%;
 }
 
 #mysql {
-    top: 10%;
-    left: 36%;
-    width: 6vw;
-    height: 6vw;
+    width: 70%;
 }
 
 #mongodb {
-    bottom: 21%;
-    right: 33.5%;
-    width: 8vw;
-    height: 8vw;
+    width: 74%;
 }
+
 
 /************ ANIMATIONS ************/
 
@@ -447,100 +452,105 @@ p {
     }
 }
 
-.bounceInSlow {
-    animation-name: bounceIn;
-    animation-duration: 4s;
+@keyframes widthChange {
+    from { max-width: 0; }
+    to { max-width: 100%; }
 }
 
-.bounceInNormal {
-    animation-name: bounceIn;
-    animation-duration: 3s;
+.animationSlow {
+    animation-name: widthChange;
+    animation-duration: 5s;
 }
 
-.bounceInFast {
-    animation-name: bounceIn;
-    animation-duration: 2s;
+.animationNormal {
+    animation-name: widthChange;
+    animation-duration: 5s;
+}
+
+.animationFast {
+    animation-name: widthChange;
+    animation-duration: 5s;
 }
 
 /************ MEDIA CAPTURES ************/
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 800px) {
 
     .header {
-        min-height: 6em;
+        height: 4em;
     }
 
     .eyeContainer {
-        margin-top: 6em;
-        padding: 1vw;
+        height: 12em;
+        margin-top: 4em;
     }
 
     .outerEye {
-        width: 15vw;
-        height: 15vw;
-        border: 2vw solid #ff9e28;
+        width: 8em;
+        height: 8em;
+        border: 0.6em solid #ff9e28;
     }
 
     .iris {
-        width: 9vw;
-        height: 9vw;
-        border: 1.8vw solid #ff9e28;
+        width: 4.2em;
+        height: 4.2em;
+        border: 1em solid #ff9e28;
     }
 
     .iris span {
-        width: 4vw;
-        height: 4vw;
+        width: 1.7em;
+        height: 1.7em;
     }
 
     .headerLinks {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-end;
-        padding: 0;
-        color: #ff9e28;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        flex: 2;
+        padding-right: 1.6em;
     }
 
     .aboutImage img {
-        width: 75%;
-    }
-}
-
-@media screen and (max-width: 800px) {
-
-    .eyeContainer {
-        height: 26vw;
-        padding: 2vw;
+        width: 36%;
     }
 
     .skillContainer {
-        height: 60vw;
+        position: relative;
+        width: 36em;
+        height: 36em;
     }
 
     .skill {
-        font-size: 0.75em;
+        position: absolute;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        background-color: #2a302e;
+        border: 8px solid #2a302e;
+        color: #ff9e28;
     }
 
     #java {
-        bottom: 3%;
-        left: 17%;
-        width: 16vw;
-        height: 16vw;
+        bottom: 2%;
+        left: 12%;
+        width: 11em;
+        height: 11em;
     }
 
     #android {
-        top: 4%;
-        right: 12%;
+        top: 14%;
+        left: 10%;
         margin: auto;
-        width: 12vw;
-        height: 12vw;
+        width: 7em;
+        height: 7em;
     }
 
     #javascript {
-        top: 1%;
-        right: 16%;
-        width: 18vw;
-        height: 18vw;
+        top: 3%;
+        right: 4%;
+        width: 13em;
+        height: 13em;
     }
 
     #react {
@@ -549,42 +559,57 @@ p {
         left: 0;
         right: 0;
         margin: auto;
-        width: 15vw;
-        height: 15vw;
+        width: 10em;
+        height: 10em;
     }
 
     #html5 {
-        bottom: 41%;
-        left: 15%;
-        width: 12vw;
-        height: 12vw;
+        bottom: 37%;
+        left: 10%;
+        width: 7em;
+        height: 7em;
     }
 
     #css {
-        bottom: 4%;
-        right: 36%;
-        width: 11vw;
-        height: 11vw;
+        bottom: 12%;
+        right: 32%;
+        width: 6em;
+        height: 6em;
     }
 
     #php {
-        bottom: 1%;
+        bottom: 12%;
         right: 16%;
-        width: 9vw;
-        height: 9vw;
+        width: 4em;
+        height: 4em;
     }
 
     #mysql {
-        top: 3%;
-        left: 12%;
-        width: 11vw;
-        height: 11vw;
+        top: 12%;
+        left: 34%;
+        width: 6em;
+        height: 6em;
     }
 
     #mongodb {
-        bottom: 27%;
-        right: 15%;
-        width: 13vw;
-        height: 13vw;
+        bottom: 28%;
+        right: 7%;
+        width: 8em;
+        height: 8em;
+    }
+
+    .animationSlow {
+        animation-name: bounceIn;
+        animation-duration: 4s;
+    }
+
+    .animationNormal {
+        animation-name: bounceIn;
+        animation-duration: 3s;
+    }
+
+    .animationFast {
+        animation-name: bounceIn;
+        animation-duration: 2s;
     }
 }
