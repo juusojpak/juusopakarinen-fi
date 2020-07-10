@@ -16,14 +16,8 @@
       const elementTop = element.offsetTop;
       const elementBottom = elementTop + element.offsetHeight;
       const elementInViewport = elementTop <= windowBottom && elementBottom >= windowTop
-
-      if (elementInViewport) {
-        element.className = "show"
-      } else {
-        element.className = "hide"
-      }
-
-
+      element.className = elementInViewport ? "show" : "hide"
+      if (windowTop === 0 && section === 'about') element.className = "hide"
     }
   }
 

@@ -4,11 +4,10 @@
   --accent-color: #9A226A;
   --default-font: 'Work Sans', sans-serif;
   --shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  --animation-delay: 1s;
-  --about-duration: 2s;
+  --about-duration: 0.75s;
   --frontend-duration: 1.5s;
-  --backend-duration: 1s;
-  --mobile-duration: 2s;
+  --backend-duration: 0.75s;
+  --mobile-duration: 1s;
 }
 
 body {
@@ -22,22 +21,30 @@ body {
 }
 
 section {
-  box-sizing: border-box;
-  min-height: 100vh;
+  min-height: 300vh;
   position: relative;
   width: 100%;
-  padding: 0 20px;
 }
 
-#about {
+.section-wrapper {
+  box-sizing: border-box;
+  left: 0;
+  min-height: 100vh;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+#about > .section-wrapper {
   align-items: center;
   display: grid;
-  grid-gap: 10%;
+  grid-gap: 40px;
   grid-template-columns: min-content minmax(min-content, 400px);
   justify-content: center;
 }
 
-#about > img {
+#about img {
   height: auto;
   width: 100px;
 }
@@ -99,11 +106,37 @@ section {
   z-index: 1;
 }
 
+#about.show #about-description:after {
+  animation: var(--about-duration) forwards fade-in;
+}
+
+#about.hide #about-description:after {
+  animation: var(--about-duration) forwards fade-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+#about-description > h3 {
+  margin: 0 0 10px 0;
+}
+
 #about-description > p {
   margin: 0;
 }
 
-#frontend {
+#about-description > p:first-of-type {
+  margin: 0 0 5px 0;
+}
+
+#frontend > .section-wrapper {
   align-items: center;
   display: grid;
   grid-gap: 30px;
@@ -243,7 +276,7 @@ section {
   to { opacity: 0; transform: translate(30px, 40px); }
 }
 
-#backend {
+#backend > .section-wrapper {
   align-items: center;
   display: grid;
   grid-gap: 30px;
@@ -283,21 +316,11 @@ section {
 }
 
 #backend.show .backend-animation-block {
-  animation: var(--backend-duration) forwards backend-block;
+  animation: var(--backend-duration) forwards fade-in;
 }
 
 #backend.hide .backend-animation-block-reversed {
-  animation: var(--backend-duration) forwards backend-block-reversed;
-}
-
-@keyframes backend-block {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes backend-block-reversed {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  animation: var(--backend-duration) forwards fade-out;
 }
 
 #backend-animation-line-1 {
@@ -307,11 +330,11 @@ section {
 }
 
 #backend.show #backend-animation-line-1 {
-  animation: var(--backend-duration) 1.5s forwards backend-line-1;
+  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-1;
 }
 
 #backend.hide #backend-animation-line-1 {
-  animation: var(--backend-duration) 1.5s forwards backend-line-1-reversed;
+  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-1-reversed;
 }
 
 @keyframes backend-line-1 {
@@ -333,11 +356,11 @@ section {
 }
 
 #backend.show #backend-animation-line-2 {
-  animation: var(--backend-duration) 1.5s forwards backend-line-2;
+  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-2;
 }
 
 #backend.hide #backend-animation-line-2-reversed {
-  animation: var(--backend-duration) 1.5s forwards backend-line-2-reversed;
+  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-2-reversed;
 }
 
 @keyframes backend-line-2 {
@@ -359,7 +382,7 @@ section {
   transform-origin: top left;
 }
 
-#mobile {
+#mobile > .section-wrapper {
   align-items: center;
   display: grid;
   grid-gap: 30px;
@@ -421,11 +444,11 @@ section {
 }
 
 #mobile.show #mobile-animation-screen > span {
-  animation: var(--mobile-duration) var(--mobile-duration) forwards mobile-block;
+  animation: var(--mobile-duration) var(--mobile-duration) forwards fade-in;
 }
 
 #mobile.hide #mobile-animation-screen > span {
-  animation: var(--mobile-duration) var(--mobile-duration) forwards mobile-block-reversed;
+  animation: var(--mobile-duration) var(--mobile-duration) forwards fade-out;
 }
 
 #mobile-animation-screen > span:nth-last-of-type(1) {
@@ -440,16 +463,6 @@ section {
   top: 60%;
 }
 
-@keyframes mobile-block {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes mobile-block-reversed {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
 #mobile-animation-button {
   background-color: black;
   border-radius: 50%;
@@ -462,7 +475,7 @@ section {
 }
 
 
-#projects {
+#projects > .section-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
@@ -555,7 +568,7 @@ section {
   white-space: nowrap;
 }
 
-#contact {
+#contact > .section-wrapper {
   align-items: center;
   display: flex;
   flex-direction: column;
