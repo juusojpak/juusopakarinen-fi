@@ -1,7 +1,6 @@
 :root {
   --background-color: #FFFFFF;
   --text-color: #333333;
-  --accent-color: #9A226A;
   --default-font: 'Work Sans', sans-serif;
   --shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-dark: 1px 1px 5px rgba(0, 0, 0, 0.4);
@@ -13,8 +12,11 @@
 
 body {
   background-color: var(--background-color);
+  color: var(--text-color);
   font-family: var(--default-font);
+  font-size: 1em;
   height: 100vh;
+  line-height: 1.7em;
   margin: 0;
   overflow: auto;
   position: relative;
@@ -136,10 +138,6 @@ section {
 
 #about-description > p {
   margin: 0;
-}
-
-#about-description > p:first-of-type {
-  margin: 0 0 5px 0;
 }
 
 #frontend-header {
@@ -573,7 +571,7 @@ section {
 }
 
 #contact-links > a:hover {
-  color: var(--accent-color);
+  color: #777777;
   outline: none;
 }
 
@@ -591,6 +589,10 @@ section {
   .section-wrapper {
     align-items: center;
     grid-gap: 100px;
+    grid-template-columns: min-content minmax(min-content, 600px);
+  }
+
+  #about > .section-wrapper {
     grid-template-columns: min-content minmax(min-content, 400px);
   }
 
