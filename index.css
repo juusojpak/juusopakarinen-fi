@@ -4,7 +4,8 @@
   --accent-color: #9A226A;
   --default-font: 'Work Sans', sans-serif;
   --shadow: 1px 1px 6px #777777;
-  --header-height: 80px;
+  --frontend-animation-border-radius: 5px;
+  --frontend-animation-duration: 1.5s;
 }
 
 body {
@@ -13,59 +14,8 @@ body {
   height: 100vh;
   margin: 0;
   overflow: auto;
-  padding: var(--header-height) 0 0;
   position: relative;
   width: 100vw;
-}
-
-#header {
-  background-color: var(--background-color);
-  box-shadow: var(--shadow);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: var(--header-height);
-  position: fixed;
-  top: 0;
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  z-index: 1;
-}
-
-#header.hidden {
-  transform: translateY(100%);
-  -webkit-transform: translateY(100%);
-}
-
-#header > h2 {
-  align-self: center;
-  color: var(--text-color);
-  font-family: 'Baloo Bhaijaan', cursive;
-  font-size: 1.2em;
-  padding: 0 1em;
-  white-space: nowrap;
-}
-
-#header > ul {
-  align-content: center;
-  display: grid;
-  grid-template-columns: repeat(3, min-content);
-  justify-content: center;
-  list-style: none;
-}
-
-#header > ul > li {
-  color: var(--text-color);
-  cursor: pointer;
-  padding: 0 1.4em;
-}
-
-#header > ul > li:hover {
-  color: var(--accent-color);
-}
-
-#header > ul > li:focus {
-  color: var(--accent-color);
-  outline: none;
 }
 
 section {
@@ -81,7 +31,6 @@ section {
   display: grid;
   grid-gap: 30px;
   grid-template-columns: min-content minmax(min-content, 400px);
-  grid-template-rows: 1fr;
   justify-content: center;
 }
 
@@ -89,6 +38,131 @@ section {
   height: auto;
   width: 100px;
 }
+
+#frontend {
+  align-items: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: minmax(min-content, 500px) min-content;
+  justify-content: center;
+}
+
+#frontend-animation {
+  height: 200px;
+  position: relative;
+  width: 300px;
+}
+
+#frontend-animation-header {
+  animation-duration: var(--frontend-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: frontend-header;
+  background-color: lightgrey;
+  border-top-left-radius: var(--frontend-animation-border-radius);
+  border-top-right-radius: var(--frontend-animation-border-radius);
+  height: 20%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@keyframes frontend-header {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+#frontend-animation-header > span {
+  animation-duration: var(--frontend-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: frontend-header-ball;
+  border-radius: 50%;
+  height: 20px;
+  position: absolute;
+  top: 25%;
+  width: 20px;
+}
+
+#frontend-animation-header > span:nth-last-of-type(1) {
+  background-color: red;
+  left: 5%;
+}
+
+#frontend-animation-header > span:nth-last-of-type(2) {
+  background-color: yellow;
+  left: 15%;
+}
+
+#frontend-animation-header > span:nth-last-of-type(3) {
+  background-color: forestgreen;
+  left: 25%;
+}
+
+@keyframes frontend-header-ball {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+#frontend-animation-body-left {
+  animation-duration: var(--frontend-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: frontend-body-left;
+  background-color: lightblue;
+  border-bottom-left-radius: var(--frontend-animation-border-radius);
+  height: 80%;
+  left: 0;
+  position: absolute;
+  top: 20%;
+  width: 80%;
+}
+
+@keyframes frontend-body-left {
+  from {
+    opacity: 0;
+    transform: translate(-20px, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+#frontend-animation-body-right {
+  animation-duration: var(--frontend-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: frontend-body-right;
+  background-color: lightpink;
+  border-bottom-right-radius: var(--frontend-animation-border-radius);
+  height: 80%;
+  left: 80%;
+  position: absolute;
+  top: 20%;
+  width: 20%;
+}
+
+@keyframes frontend-body-right {
+  from {
+    opacity: 0;
+    transform: translate(30px, 40px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
 
 #skills > h2 {
   margin-bottom: 20px;
