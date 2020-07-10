@@ -3,7 +3,8 @@
   --text-color: #333333;
   --accent-color: #9A226A;
   --default-font: 'Work Sans', sans-serif;
-  --shadow: 1px 1px 6px #777777;
+  --shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  --about-animation-duration: 2s;
   --frontend-animation-border-radius: 5px;
   --frontend-animation-duration: 1.5s;
   --backend-animation-duration: 1s;
@@ -31,7 +32,7 @@ section {
 #about {
   align-items: center;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 10%;
   grid-template-columns: min-content minmax(min-content, 400px);
   justify-content: center;
 }
@@ -39,6 +40,56 @@ section {
 #about > img {
   height: auto;
   width: 100px;
+}
+
+#about-description {
+  animation-duration: var(--about-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: lift-up;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+#about-description:before {
+  animation-duration: var(--about-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: lift-up;
+  background-color: var(--background-color);
+  content: "";
+  height: 20px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg) translateX(-15px);
+  width: 20px;
+  z-index: -1;
+}
+
+#about-description:after {
+  background-color: var(--background-color);
+  content: "";
+  height: 20px;
+  left: 1px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg) translateX(-15px);
+  width: 20px;
+  z-index: 1;
+}
+
+#about-description > p {
+  margin: 0;
+}
+
+@keyframes lift-up {
+  from {
+    box-shadow: none;
+  }
+  to {
+    box-shadow: var(--shadow);
+  }
 }
 
 #frontend {
@@ -490,33 +541,6 @@ section {
   color: var(--text-color);
 }
 
-#footer {
-  align-items: center;
-  background-color: var(--background-color);
-  display: grid;
-  height: 4em;
-  justify-items: center;
-  width: 100%;
-}
-
 @media screen and (min-width: 800px) {
 
-}
-
-@keyframes ascend {
-  from {
-    box-shadow: none;
-  }
-  to {
-    box-shadow: var(--shadow);
-  }
-}
-
-@keyframes descend {
-  from {
-    box-shadow: var(--shadow);
-  }
-  to {
-    box-shadow: none;
-  }
 }
