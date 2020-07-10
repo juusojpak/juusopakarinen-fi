@@ -7,6 +7,7 @@
   --frontend-animation-border-radius: 5px;
   --frontend-animation-duration: 1.5s;
   --backend-animation-duration: 1s;
+  --mobile-animation-duration: 2s;
 }
 
 body {
@@ -269,9 +270,100 @@ section {
   transform-origin: top left;
 }
 
+#mobile {
+  align-items: center;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: minmax(min-content, 500px) min-content;
+  justify-content: center;
+}
 
+#mobile-animation {
+  height: 300px;
+  position: relative;
+  width: 200px;
+}
 
+#mobile-animation-frame {
+  background-color: dimgray;
+  border-radius: 10px;
+  height: 100%;
+  padding: 20px 20px 40px;
+  position: relative;
+  width: 100%;
+}
 
+#mobile-animation-screen {
+  animation-duration: var(--mobile-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: mobile-screen;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes mobile-screen {
+  0% {
+    background-color: black;
+  }
+  20% {
+    background-color: white;
+  }
+  25% {
+    background-color: black;
+  }
+  30% {
+    background-color: white;
+  }
+  100% {
+    background-color: white;
+  }
+}
+
+#mobile-animation-screen > span {
+  animation-delay: var(--mobile-animation-duration);
+  animation-duration: var(--mobile-animation-duration);
+  animation-iteration-count: infinite;
+  animation-name: mobile-block;
+  background-color: lightgrey;
+  border-radius: 4px;
+  height: 40px;
+  left: 40px;
+  position: absolute;
+  width: calc(100% - 80px);
+}
+
+#mobile-animation-screen > span:nth-last-of-type(1) {
+  top: 20%;
+}
+
+#mobile-animation-screen > span:nth-last-of-type(2) {
+  top: 40%;
+}
+
+#mobile-animation-screen > span:nth-last-of-type(3) {
+  top: 60%;
+}
+
+@keyframes mobile-block {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#mobile-animation-button {
+  background-color: black;
+  border-radius: 50%;
+  bottom: 20px;
+  height: 20px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 40%);
+  width: 20px;
+}
 
 
 #projects {
