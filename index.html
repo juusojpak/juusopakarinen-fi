@@ -1,251 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Juuso Pakarinen</title>
-
-  <!-- Font Awesome Icons -->
   <script src="https://use.fontawesome.com/96efc9f1ca.js"></script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
-
-  <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  <link rel="stylesheet" type="text/css" href="index.css"/>
 </head>
-
 <body>
-
-<div class="wrapper">
-  <div class="header">
-    <div class="headerTitle">
-      <p>Juuso Pakarinen</p>
-    </div>
-    <ul class="headerLinks">
-      <li class="headerLink"><p>Me</p></li>
-      <li class="headerLink"><p>Projects</p></li>
-      <li class="headerLink"><p>Skills</p></li>
-      <li class="headerLink"><p>Contact</p></li>
-    </ul>
-  </div>
-
-  <div id="top">
-    <div class="eyeContainer">
-      <div class="outerEye"></div>
-    </div>
-    <div class="topTextContainer">
-      <h2>Fullstack <span>developer</span></h2>
-    </div>
-  </div>
-
-
-  <div id="about">
-    <div class="title firstTitle">
-      <h2>Me</h2>
-    </div>
-    <div class="sectionContent aboutContent">
-      <div class="aboutText">
-        <p>I study software development at Tampere University of Applied Sciences.</p>
-        <p>My greatest interests are web, mobile and game development.</p>
-      </div>
-      <div class="aboutImage">
-        <img src="images/face.png" />
+  <section id="about">
+    <div class="section-wrapper">
+      <img src="assets/juuso.png" alt="Juuso Pakarinen" />
+      <div id="about-box">
+        <h3>Hi, my name is Juuso Pakarinen.</h3>
+        <p>I'm a fullstack web developer from Finland.</p>
+        <p>Scroll down to see what I do...</p>
       </div>
     </div>
-  </div>
-
-  <div id="projects">
-    <div class="title">
-      <h2>Projects</h2>
-    </div>
-    <div class="sectionContent">
-
-      <div class="project">
-        <div class="projectContent">
-          <div class="projectImageContainer">
-            <img class="projectImage landscape" src="images/mateas.png" />
-          </div>
-          <div class="projectText">
-            <div class="projectTitle">
-              <h2>MATEAS</h2>
-            </div>
-            <p>
-              Upcoming multiplatform mobile app for searching Finnish health care
-              service locations. App is developed using React Native. I'm also building
-              backend API for the locations and a web based administration page for it.
-            </p>
-            <ul class="projectTags">
-              <li class="projectTag">React Native</li>
-              <li class="projectTag">Node.js</li>
-              <li class="projectTag">express.js</li>
-              <li class="projectTag">JWT</li>
-              <li class="projectTag">ReactJS</li>
-              <li class="projectTag">Redux</li>
-              <li class="projectTag">Mongoose</li>
-              <li class="projectTag">MongoDB</li>
-            </ul>
-          </div>
+  </section>
+  <section id="frontend">
+    <div class="section-wrapper">
+      <div class="animation-wrapper">
+        <div id="frontend-header">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
+        <div id="frontend-body-left"></div>
+        <div id="frontend-body-right"></div>
       </div>
-
-      <div class="project">
-        <div class="projectContent">
-          <div class="projectImageContainer">
-            <img class="projectImage" src="images/pixpainter.png" />
-          </div>
-          <div class="projectText">
-            <div class="projectTitle">
-              <h2>PixPainter</h2>
-              <a href="https://github.com/juusojpak/PixPainter" class="fa fa-github"></a>
-              <a href='https://play.google.com/store/apps/details?id=fi.tamk.jpak.pixpainter&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-                <img
-                    class="badge"
-                    alt='Get it on Google Play'
-                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-              </a>
-            </div>
-            <p>
-              Android app for drawing 2D pixel art. Contains all basic art editor
-              functions, like: pencil, brush, eraser, fill and color picker. I used
-              this app to make its own icons.
-            </p>
-            <ul class="projectTags">
-              <li class="projectTag">Android</li>
-              <li class="projectTag">Java</li>
-              <li class="projectTag">XML</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="projectContent">
-          <div class="projectImageContainer">
-            <img class="projectImage landscape" src="images/surplus.png" />
-          </div>
-          <div class="projectText">
-            <div class="projectTitle">
-              <h2>Surplus Meals</h2>
-              <a href="https://github.com/joni3k/surplus-meals-public" class="fa fa-github"></a>
-            </div>
-            <p>
-              Web application for ordering leftover meals. Application was made
-              for and is used in a private company and it contains JWT based
-              authentication. I build application's backend and contributed to
-              React frontend. I also deployed the application to a server and have
-              offered technical support to the client as needed.
-            </p>
-            <ul class="projectTags">
-              <li class="projectTag">ReactJS</li>
-              <li class="projectTag">Redux</li>
-              <li class="projectTag">JWT</li>
-              <li class="projectTag">PHP</li>
-              <li class="projectTag">Symfony</li>
-              <li class="projectTag">MySQL</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="projectContent">
-          <div class="projectImageContainer">
-            <img class="projectImage" src="images/glowbox.png" />
-          </div>
-          <div class="projectText">
-            <div class="projectTitle">
-              <h2>Glowbox</h2>
-              <a href="https://github.com/joni3k/roor-project" class="fa fa-github"></a>
-              <a href='https://play.google.com/store/apps/details?id=com.ionicframework.roor805620&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-                <img
-                    class="badge"
-                    alt='Get it on Google Play'
-                    src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/>
-              </a>
-            </div>
-            <p>
-              Shoutbox-like Android app for anonymous messaging in either public or
-              private groups. App contains JWT based authentication. Posted messages
-              "light up" or "dim down" gradually based on their score.
-            </p>
-            <ul class="projectTags">
-              <li class="projectTag">AngularJS</li>
-              <li class="projectTag">Node.js</li>
-              <li class="projectTag">express.js</li>
-              <li class="projectTag">JWT</li>
-              <li class="projectTag">Ionic Framework</li>
-              <li class="projectTag">MongoDB</li>
-            </ul>
-          </div>
-        </div>
+      <div>
+        <p>
+          Even though I'm interested in many various areas of web & software
+          development, I find myself often in more front-end heavy roles due to
+          my passion for pixel perfect UIs and intuitive user experiences.
+        </p>
+        <p class="techs">
+          Technologies I have worked with includes...
+          <span>React,</span>
+          <span>Typescript,</span>
+          <span>Javascript,</span>
+          <span>PWAs</span>
+        </p>
       </div>
     </div>
-  </div>
-
-  <div id="skills">
-    <div class="title">
-      <h2>Skills</h2>
-    </div>
-    <div class="sectionContent centeredContent">
-      <div class="skillContainer">
-        <div id="java" class="skill">
-          <p>Java</p>
-        </div>
-        <div id="android" class="skill">
-          <p>Android</p>
-        </div>
-        <div id="javascript" class="skill">
-          <p>Javascript</p>
-        </div>
-        <div id="react" class="skill">
-          <p>React</p>
-        </div>
-        <div id="php" class="skill">
-          <p>PHP</p>
-        </div>
-        <div id="html5" class="skill">
-          <p>HTML5</p>
-        </div>
-        <div id="css" class="skill">
-          <p>CSS</p>
-        </div>
-        <div id="mysql" class="skill">
-          <p>mySQL</p>
-        </div>
-        <div id="mongodb" class="skill">
-          <p>MongoDB</p>
-        </div>
+  </section>
+  <section id="backend">
+    <div class="section-wrapper">
+      <div class="animation-wrapper">
+        <div id="backend-block-1" class="backend-block"></div>
+        <div id="backend-line-1" class="backend-line"></div>
+        <div id="backend-block-2" class="backend-block"></div>
+        <div id="backend-line-2" class="backend-line"></div>
+        <div id="backend-block-3" class="backend-block"></div>
+      </div>
+      <div>
+        <p>
+          I have implemented server software and APIs using various different
+          technologies.
+        </p>
+        <p>
+          With these projects, I have worked with among other things: database
+          connections, user authentication and integrations to other systems
+          like CMS and authentication providers.
+        </p>
+        <p class="techs">
+          I have experience with technologies such as...
+          <span>NodeJS,</span>
+          <span>Java,</span>
+          <span>Go,</span>
+          <span>PHP,</span>
+          <span>PostgreSQL,</span>
+          <span>MySQL,</span>
+          <span>MongoDB,</span>
+          <span>Docker,</span>
+          <span>AWS</span>
+        </p>
       </div>
     </div>
-  </div>
-
-  <div id="contact">
-    <div class="title">
-      <h2>Contact me</h2>
+  </section>
+  <section id="mobile">
+    <div class="section-wrapper">
+      <div class="animation-wrapper">
+        <div id="mobile-frame">
+          <div id="mobile-screen">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div id="mobile-button"></div>
+        </div>
+      </div>
+      <div>
+        <p>
+          I have some experience with building mobile applications, both using
+          cross-platform frameworks and native APIs, and publishing them through
+          different platforms.
+        </p>
+        <p class="techs">
+          For example, I have used...
+          <span>React Native,</span>
+          <span>Android</span>
+        </p>
+      </div>
     </div>
-    <div class="sectionContent removeBorder">
-      <ul class="contactInfo">
-        <li>juusojpak@gmail.com</li>
-        <li>juuso.pakarinen@cs.tamk.fi</li>
-        <li>(+358)401578081</li>
-      </ul>
-      <div class="contactLinks">
+  </section>
+  <section id="contact">
+    <div class="section-wrapper">
+      <h3>Contact me</h3>
+      <p>me@juusopakarinen.fi</p>
+      <div id="contact-links">
         <a href="https://github.com/juusojpak" class="fa fa-github"></a>
         <a href="https://www.linkedin.com/in/juusojpak" class="fa fa-linkedin-square"></a>
       </div>
     </div>
-  </div>
-
-  <div class="footer">
-    <p>© Juuso Pakarinen 2017</p>
-  </div>
-</div>
-
-<script type="text/javascript" src="js/script.js"></script>
-
+  </section>
+  <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
