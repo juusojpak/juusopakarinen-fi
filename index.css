@@ -28,18 +28,26 @@ section {
 }
 
 .section-wrapper {
-  align-items: center;
+  align-content: center;
   box-sizing: border-box;
   display: grid;
-  grid-gap: 100px;
-  grid-template-columns: min-content minmax(min-content, 400px);
+  grid-gap: 50px;
+  grid-template-columns: 1fr;
   justify-content: center;
+  justify-items: center;
   left: 0;
   min-height: 100vh;
   padding: 0 20px;
   position: sticky;
   top: 0;
   width: 100%;
+}
+
+.animation-wrapper {
+  height: 200px;
+  position: relative;
+  transform: scale(0.8);
+  width: 300px;
 }
 
 #about img {
@@ -66,10 +74,10 @@ section {
   background-color: var(--background-color);
   content: "";
   height: 20px;
-  left: 0;
+  left: 50%;
   position: absolute;
-  top: 50%;
-  transform: rotate(45deg) translateX(-15px);
+  top: 0;
+  transform: rotate(45deg) translateY(-15px);
   width: 20px;
   z-index: -1;
 }
@@ -96,10 +104,10 @@ section {
   background-color: var(--background-color);
   content: "";
   height: 20px;
-  left: 1px;
+  left: 50%;
   position: absolute;
-  top: 50%;
-  transform: rotate(45deg) translateX(-15px);
+  top: 1px;
+  transform: rotate(45deg) translateY(-15px);
   width: 20px;
   z-index: 1;
 }
@@ -134,13 +142,7 @@ section {
   margin: 0 0 5px 0;
 }
 
-#frontend-animation {
-  height: 200px;
-  position: relative;
-  width: 300px;
-}
-
-#frontend-animation-header {
+#frontend-header {
   background-color: #EAEAEA;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -151,11 +153,11 @@ section {
   width: 100%;
 }
 
-#frontend.show #frontend-animation-header {
+#frontend.show #frontend-header {
   animation: var(--frontend-duration) forwards frontend-header;
 }
 
-#frontend.hide #frontend-animation-header {
+#frontend.hide #frontend-header {
   animation: var(--frontend-duration) forwards frontend-header-reversed;
 }
 
@@ -191,7 +193,7 @@ section {
   }
 }
 
-#frontend-animation-header > span {
+#frontend-header > span {
   border-radius: 50%;
   height: 20px;
   position: absolute;
@@ -199,25 +201,25 @@ section {
   width: 20px;
 }
 
-#frontend.show #frontend-animation-header > span {
+#frontend.show #frontend-header > span {
   animation: var(--frontend-duration) forwards frontend-header-ball;
 }
 
-#frontend.hide #frontend-animation-header > span {
+#frontend.hide #frontend-header > span {
   animation: var(--frontend-duration) forwards frontend-header-ball-reversed;
 }
 
-#frontend-animation-header > span:nth-last-of-type(1) {
+#frontend-header > span:nth-last-of-type(1) {
   background-color: #DC5770;
   left: 5%;
 }
 
-#frontend-animation-header > span:nth-last-of-type(2) {
+#frontend-header > span:nth-last-of-type(2) {
   background-color: #EFCE30;
   left: 15%;
 }
 
-#frontend-animation-header > span:nth-last-of-type(3) {
+#frontend-header > span:nth-last-of-type(3) {
   background-color: #5ABD5A;
   left: 25%;
 }
@@ -254,7 +256,7 @@ section {
   }
 }
 
-#frontend-animation-body-left {
+#frontend-body-left {
   background-color: #A4E4CF;
   border-bottom-left-radius: 4px;
   height: 80%;
@@ -264,11 +266,11 @@ section {
   width: 80%;
 }
 
-#frontend.show #frontend-animation-body-left {
+#frontend.show #frontend-body-left {
   animation: var(--frontend-duration) forwards frontend-body-left;
 }
 
-#frontend.hide #frontend-animation-body-left {
+#frontend.hide #frontend-body-left {
   animation: var(--frontend-duration) forwards frontend-body-left-reversed;
 }
 
@@ -304,7 +306,7 @@ section {
   }
 }
 
-#frontend-animation-body-right {
+#frontend-body-right {
   background-color: #FFE791;
   border-bottom-right-radius: 4px;
   height: 80%;
@@ -314,11 +316,11 @@ section {
   width: 20%;
 }
 
-#frontend.show #frontend-animation-body-right {
+#frontend.show #frontend-body-right {
   animation: var(--frontend-duration) forwards frontend-body-right;
 }
 
-#frontend.hide #frontend-animation-body-right {
+#frontend.hide #frontend-body-right {
   animation: var(--frontend-duration) forwards frontend-body-right-reversed;
 }
 
@@ -354,13 +356,7 @@ section {
   }
 }
 
-#backend-animation {
-  height: 200px;
-  position: relative;
-  width: 300px;
-}
-
-#backend-animation-block-1 {
+#backend-block-1 {
   background-color: #F1A2E7;
   border-radius: 12px;
   left: 0;
@@ -368,30 +364,30 @@ section {
   transform: translateY(-50%);
 }
 
-#backend-animation-block-2 {
+#backend-block-2 {
   background-color: #9191F9;
   right: 0;
   top: 0;
 }
 
-#backend-animation-block-3 {
+#backend-block-3 {
   background-color: #F97A7A;
   border-radius: 50%;
   bottom: 0;
   right: 0;
 }
 
-.backend-animation-block {
+.backend-block {
   height: 25%;
   position: absolute;
   width: 15%;
 }
 
-#backend.show .backend-animation-block {
+#backend.show .backend-block {
   animation: var(--backend-duration) forwards backend-block;
 }
 
-#backend.hide .backend-animation-block-reversed {
+#backend.hide .backend-block {
   animation: var(--backend-duration) forwards backend-block-reversed;
 }
 
@@ -405,17 +401,17 @@ section {
   to { box-shadow: var(--shadow-dark); opacity: 0; }
 }
 
-#backend-animation-line-1 {
+#backend-line-1 {
   left: 20%;
   top: calc(50% - 10px);
   transform: rotate(-20deg) translateY(-50%);
 }
 
-#backend.show #backend-animation-line-1 {
+#backend.show #backend-line-1 {
   animation: var(--backend-duration) var(--backend-duration) forwards backend-line-1;
 }
 
-#backend.hide #backend-animation-line-1 {
+#backend.hide #backend-line-1 {
   animation: var(--backend-duration) var(--backend-duration) forwards backend-line-1-reversed;
 }
 
@@ -431,17 +427,17 @@ section {
   100% { transform: rotate(0); width: 0; }
 }
 
-#backend-animation-line-2 {
+#backend-line-2 {
   left: 20%;
   top: calc(50% + 10px);
   transform: rotate(20deg) translateY(-50%);
 }
 
-#backend.show #backend-animation-line-2 {
+#backend.show #backend-line-2 {
   animation: var(--backend-duration) var(--backend-duration) forwards backend-line-2;
 }
 
-#backend.hide #backend-animation-line-2-reversed {
+#backend.hide #backend-line-2 {
   animation: var(--backend-duration) var(--backend-duration) forwards backend-line-2-reversed;
 }
 
@@ -457,40 +453,40 @@ section {
   100% { transform: rotate(0); width: 0; }
 }
 
-.backend-animation-line {
+.backend-line {
   background-color: darkgrey;
   height: 1px;
   position: absolute;
   transform-origin: top left;
 }
 
-#mobile-animation {
+#mobile .animation-wrapper {
   height: 300px;
-  position: relative;
-  transform: scale(0.8);
+  transform: scale(0.6);
   width: 200px;
 }
 
-#mobile-animation-frame {
-  background-color: dimgray;
+#mobile-frame {
+  background-color: #888888;
   border-radius: 10px;
+  box-sizing: border-box;
   height: 100%;
   padding: 20px 20px 40px;
   position: relative;
   width: 100%;
 }
 
-#mobile-animation-screen {
+#mobile-screen {
   background-color: black;
   height: 100%;
   width: 100%;
 }
 
-#mobile.show #mobile-animation-screen {
+#mobile.show #mobile-screen {
   animation: var(--mobile-duration) forwards mobile-screen-boot;
 }
 
-#mobile.hide #mobile-animation-screen {
+#mobile.hide #mobile-screen {
   animation: var(--mobile-duration) forwards mobile-screen-shutdown;
 }
 
@@ -508,7 +504,7 @@ section {
   100% { background-color: black; }
 }
 
-#mobile-animation-screen > span {
+#mobile-screen > span {
   background-color: lightgrey;
   border-radius: 4px;
   height: 40px;
@@ -518,27 +514,27 @@ section {
   width: calc(100% - 80px);
 }
 
-#mobile.show #mobile-animation-screen > span {
+#mobile.show #mobile-screen > span {
   animation: var(--mobile-duration) var(--mobile-duration) forwards fade-in;
 }
 
-#mobile.hide #mobile-animation-screen > span {
+#mobile.hide #mobile-screen > span {
   animation: var(--mobile-duration) var(--mobile-duration) forwards fade-out;
 }
 
-#mobile-animation-screen > span:nth-last-of-type(1) {
+#mobile-screen > span:nth-last-of-type(1) {
   top: 20%;
 }
 
-#mobile-animation-screen > span:nth-last-of-type(2) {
+#mobile-screen > span:nth-last-of-type(2) {
   top: 40%;
 }
 
-#mobile-animation-screen > span:nth-last-of-type(3) {
+#mobile-screen > span:nth-last-of-type(3) {
   top: 60%;
 }
 
-#mobile-animation-button {
+#mobile-button {
   background-color: black;
   border-radius: 50%;
   bottom: 20px;
@@ -581,6 +577,32 @@ section {
   outline: none;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 400px) {
+  .animation-wrapper {
+    transform: scale(1);
+  }
 
+  #mobile .animation-wrapper {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .section-wrapper {
+    align-items: center;
+    grid-gap: 100px;
+    grid-template-columns: min-content minmax(min-content, 400px);
+  }
+
+  #about-description:before {
+    left: 0;
+    top: 50%;
+    transform: rotate(45deg) translateX(-15px);
+  }
+
+  #about-description:after {
+    left: 1px;
+    top: 50%;
+    transform: rotate(45deg) translateX(-15px);
+  }
 }
