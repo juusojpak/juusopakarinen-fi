@@ -3,7 +3,8 @@
   --text-color: #333333;
   --accent-color: #9A226A;
   --default-font: 'Work Sans', sans-serif;
-  --shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  --shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-dark: 1px 1px 5px rgba(0, 0, 0, 0.4);
   --about-duration: 0.75s;
   --frontend-duration: 1.5s;
   --backend-duration: 0.75s;
@@ -83,11 +84,11 @@ section {
 
 @keyframes ascend {
   from { box-shadow: none; }
-  to { box-shadow: var(--shadow); }
+  to { box-shadow: var(--shadow-dark); }
 }
 
 @keyframes descend {
-  from { box-shadow: var(--shadow); }
+  from { box-shadow: var(--shadow-dark); }
   to { box-shadow: none; }
 }
 
@@ -140,7 +141,7 @@ section {
 }
 
 #frontend-animation-header {
-  background-color: lightgrey;
+  background-color: #EAEAEA;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   height: 20%;
@@ -159,13 +160,35 @@ section {
 }
 
 @keyframes frontend-header {
-  from { opacity: 0; transform: translateY(-50px); }
-  to { opacity: 1; transform: translateY(0px); }
+  0% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 @keyframes frontend-header-reversed {
-  from { opacity: 1; transform: translateY(0px); }
-  to { opacity: 0; transform: translateY(-50px); }
+  0% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translateY(-50px);
+  }
 }
 
 #frontend-animation-header > span {
@@ -185,32 +208,54 @@ section {
 }
 
 #frontend-animation-header > span:nth-last-of-type(1) {
-  background-color: crimson;
+  background-color: #DC5770;
   left: 5%;
 }
 
 #frontend-animation-header > span:nth-last-of-type(2) {
-  background-color: gold;
+  background-color: #EFCE30;
   left: 15%;
 }
 
 #frontend-animation-header > span:nth-last-of-type(3) {
-  background-color: forestgreen;
+  background-color: #5ABD5A;
   left: 25%;
 }
 
 @keyframes frontend-header-ball {
-  from { opacity: 0; transform: translateY(-60px); }
-  to { opacity: 1; transform: translateY(0px); }
+  0% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 @keyframes frontend-header-ball-reversed {
-  from { opacity: 1; transform: translateY(0px); }
-  to { opacity: 0; transform: translateY(-60px); }
+  0% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translateY(-60px);
+  }
 }
 
 #frontend-animation-body-left {
-  background-color: lightblue;
+  background-color: #A4E4CF;
   border-bottom-left-radius: 4px;
   height: 80%;
   left: 0;
@@ -228,17 +273,39 @@ section {
 }
 
 @keyframes frontend-body-left {
-  from { opacity: 0; transform: translate(-20px, 30px); }
-  to { opacity: 1; transform: translate(0px, 0px); }
+  0% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translate(-20px, 30px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes frontend-body-left-reversed {
-  from { opacity: 1; transform: translate(0px, 0px); }
-  to { opacity: 0; transform: translate(-20px, 30px); }
+  0% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translate(-20px, 30px);
+  }
 }
 
 #frontend-animation-body-right {
-  background-color: lightpink;
+  background-color: #FFE791;
   border-bottom-right-radius: 4px;
   height: 80%;
   left: 80%;
@@ -256,13 +323,35 @@ section {
 }
 
 @keyframes frontend-body-right {
-  from { opacity: 0; transform: translate(30px, 40px); }
-  to { opacity: 1; transform: translate(0px, 0px); }
+  0% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translate(30px, 40px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
 }
 
 @keyframes frontend-body-right-reversed {
-  from { opacity: 1; transform: translate(0px, 0px); }
-  to { opacity: 0; transform: translate(30px, 40px); }
+  0% {
+    box-shadow: none;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  80% {
+    box-shadow: var(--shadow-light);
+  }
+  100% {
+    box-shadow: var(--shadow-dark);
+    opacity: 0;
+    transform: translate(30px, 40px);
+  }
 }
 
 #backend-animation {
@@ -272,20 +361,22 @@ section {
 }
 
 #backend-animation-block-1 {
-  background-color: red;
+  background-color: #F1A2E7;
+  border-radius: 12px;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
 #backend-animation-block-2 {
-  background-color: blue;
+  background-color: #9191F9;
   right: 0;
   top: 0;
 }
 
 #backend-animation-block-3 {
-  background-color: green;
+  background-color: #F97A7A;
+  border-radius: 50%;
   bottom: 0;
   right: 0;
 }
@@ -297,11 +388,21 @@ section {
 }
 
 #backend.show .backend-animation-block {
-  animation: var(--backend-duration) forwards fade-in;
+  animation: var(--backend-duration) forwards backend-block;
 }
 
 #backend.hide .backend-animation-block-reversed {
-  animation: var(--backend-duration) forwards fade-out;
+  animation: var(--backend-duration) forwards backend-block-reversed;
+}
+
+@keyframes backend-block {
+  from { box-shadow: var(--shadow-dark); opacity: 0; }
+  to { box-shadow: none; opacity: 1; }
+}
+
+@keyframes backend-block-reversed {
+  from { box-shadow: none; opacity: 1; }
+  to { box-shadow: var(--shadow-dark); opacity: 0; }
 }
 
 #backend-animation-line-1 {
@@ -366,6 +467,7 @@ section {
 #mobile-animation {
   height: 300px;
   position: relative;
+  transform: scale(0.8);
   width: 200px;
 }
 
