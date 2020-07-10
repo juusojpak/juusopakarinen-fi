@@ -1,7 +1,3 @@
-/**
- * Created by Juuso Pakarinen on 10/06/2020.
- */
-
 (function () {
 
   'use strict';
