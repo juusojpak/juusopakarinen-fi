@@ -416,62 +416,60 @@ a {
   to { box-shadow: var(--shadow-dark); opacity: 0; }
 }
 
-#backend-line-1 {
-  left: 20%;
-  top: calc(50% - 10px);
-  transform: rotate(-20deg) translateY(-50%);
+#backend-line-base {
+  left: 25%;
+  transform: translateY(-50%);
 }
 
-#backend.show #backend-line-1 {
-  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-1;
+#backend.show #backend-line-base {
+  animation: var(--backend-duration) var(--backend-duration) forwards backend-line;
 }
 
-#backend.hide #backend-line-1 {
-  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-1-reversed;
+#backend.hide #backend-line-base {
+  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-reversed;
 }
 
-@keyframes backend-line-1 {
-  0% { transform: rotate(0); width: 0; }
-  50% { transform: rotate(0); width: 60%; }
-  100% { transform: rotate(-20deg); width: 60%; }
+#backend-line-fork-upwards {
+  left: 55%;
+  transform: rotate(-50deg) translateY(-50%);
 }
 
-@keyframes backend-line-1-reversed {
-  0% { transform: rotate(-20deg); width: 60%; }
-  50% { transform: rotate(0); width: 60%; }
-  100% { transform: rotate(0); width: 0; }
+#backend.show #backend-line-fork-upwards {
+  animation: var(--backend-duration) calc(var(--backend-duration) * 2) forwards backend-line;
 }
 
-#backend-line-2 {
-  left: 20%;
-  top: calc(50% + 10px);
-  transform: rotate(20deg) translateY(-50%);
+#backend.hide #backend-line-fork-upwards {
+  animation: var(--backend-duration) calc(var(--backend-duration) * 2) forwards backend-line-reversed;
 }
 
-#backend.show #backend-line-2 {
-  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-2;
+#backend-line-fork-downwards {
+  left: 55%;
+  transform: rotate(50deg) translateY(-50%);
 }
 
-#backend.hide #backend-line-2 {
-  animation: var(--backend-duration) var(--backend-duration) forwards backend-line-2-reversed;
+#backend.show #backend-line-fork-downwards {
+  animation: var(--backend-duration) calc(var(--backend-duration) * 2) forwards backend-line;
 }
 
-@keyframes backend-line-2 {
-  0% { transform: rotate(0); width: 0; }
-  50% { transform: rotate(0); width: 60%; }
-  100% { transform: rotate(20deg); width: 60%;}
+#backend.hide #backend-line-fork-downwards {
+  animation: var(--backend-duration) calc(var(--backend-duration) * 2) forwards backend-line-reversed;
 }
 
-@keyframes backend-line-2-reversed {
-  0% { transform: rotate(20deg); width: 60%;}
-  50% { transform: rotate(0); width: 60%; }
-  100% { transform: rotate(0); width: 0; }
+@keyframes backend-line {
+  from { width: 0; }
+  to { width: 30%; }
+}
+
+@keyframes backend-line-reversed {
+  from { width: 30%; }
+  to { width: 0; }
 }
 
 .backend-line {
-  background-color: darkgrey;
-  height: 1px;
+  background-color: #999999;
+  height: 2px;
   position: absolute;
+  top: 50%;
   transform-origin: top left;
 }
 
@@ -583,6 +581,7 @@ a {
 
 #contact-icons {
   display: flex;
+  margin: 1em 0 0;
 }
 
 #contact-icons > a {
@@ -668,5 +667,9 @@ section.hide .techs > span {
     left: 1px;
     top: 50%;
     transform: rotate(45deg) translateX(-15px);
+  }
+
+  #contact > .section-wrapper {
+    display: flex;
   }
 }
