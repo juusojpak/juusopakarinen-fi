@@ -1,5 +1,4 @@
 :root {
-  --background-color: #FFFFFF;
   --text-color: #333333;
   --default-font: 'Work Sans', sans-serif;
   --shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.2);
@@ -12,20 +11,28 @@
 }
 
 body {
-  background-color: var(--background-color);
+  background: linear-gradient(
+    to bottom,
+    #FFFFFF,
+    #FFFFFF,
+    #f9ffc3,
+    #d4fffb,
+    #f8eaff,
+    #FFFFFF,
+    #FFFFFF
+  );
   color: var(--text-color);
   font-family: var(--default-font);
   font-size: 1em;
-  height: 100vh;
   line-height: 1.7em;
   margin: 0;
-  overflow: auto;
+  padding: 0;
   position: relative;
   width: 100vw;
 }
 
 section {
-  min-height: 200vh;
+  min-height: 300vh;
   position: relative;
   width: 100%;
   -webkit-backface-visibility: hidden;
@@ -46,7 +53,7 @@ a {
   justify-items: center;
   left: 0;
   min-height: 100vh;
-  padding: 0 20px;
+  padding: 0 40px;
   position: sticky;
   top: 0;
   width: 100%;
@@ -65,7 +72,7 @@ a {
 }
 
 #about-box {
-  background-color: var(--background-color);
+  background-color: #FFFFFF;
   border-radius: 10px;
   padding: 20px;
   position: relative;
@@ -80,7 +87,7 @@ a {
 }
 
 #about-box:before {
-  background-color: var(--background-color);
+  background-color: #FFFFFF;
   content: "";
   height: 20px;
   left: 50%;
@@ -110,7 +117,7 @@ a {
 }
 
 #about-box:after {
-  background-color: var(--background-color);
+  background-color: #FEFEFE;
   content: "";
   height: 20px;
   left: 50%;
