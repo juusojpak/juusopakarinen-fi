@@ -139,14 +139,6 @@ a {
   to { opacity: 0; }
 }
 
-#about-box > h3 {
-  margin: 0 0 10px 0;
-}
-
-#about-box > p {
-  margin: 0;
-}
-
 #frontend-header {
   background-color: #EAEAEA;
   border-top-left-radius: 4px;
