@@ -18,9 +18,9 @@ body {
     to bottom,
     #FFFFFF,
     #FFFFFF,
-    #f9ffc3,
-    #d4fffb,
-    #f8eaff,
+    #F1FFF1,
+    #F1F1FF,
+    #FFF1F1,
     #FFFFFF,
     #FFFFFF
   );
@@ -80,45 +80,26 @@ a {
   position: relative;
   padding: 20px;
   background-color: #FFFFFF;
-  border-radius: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
 }
 
 #about.show #about-box {
-  animation: var(--about-duration) forwards ascend;
+  animation: var(--about-duration) forwards show-border;
 }
 
 #about.hide #about-box {
-  animation: var(--about-duration) forwards descend;
+  animation: var(--about-duration) forwards hide-border;
 }
 
-#about-box:before {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  content: "";
-  width: 20px;
-  height: 20px;
-  background-color: #FFFFFF;
-  transform: rotate(45deg) translateY(-15px);
-  z-index: -1;
+@keyframes show-border {
+  from { border-color: transparent; }
+  to { border-color: #000000; }
 }
 
-#about.show #about-box:before {
-  animation: var(--about-duration) forwards ascend;
-}
-
-#about.hide #about-box:before {
-  animation: var(--about-duration) forwards descned;
-}
-
-@keyframes ascend {
-  from { box-shadow: none; }
-  to { box-shadow: var(--shadow-dark); }
-}
-
-@keyframes descend {
-  from { box-shadow: var(--shadow-dark); }
-  to { box-shadow: none; }
+@keyframes hide-border {
+  from { border-color: #000000; }
+  to { border-color: transparent; }
 }
 
 #about-box:after {
@@ -129,16 +110,47 @@ a {
   width: 20px;
   height: 20px;
   background-color: #FEFEFE;
+  border: 1px solid;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
   transform: rotate(45deg) translateY(-15px);
   z-index: 1;
 }
 
 #about.show #about-box:after {
-  animation: var(--about-duration) forwards fade-in;
+  animation: var(--about-duration) forwards show-arrow-border;
 }
 
 #about.hide #about-box:after {
-  animation: var(--about-duration) forwards fade-out;
+  animation: var(--about-duration) forwards hide-arrow-border;
+}
+
+@keyframes show-arrow-border {
+  from {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  to {
+    border-bottom-color: #000000;
+    border-left-color: #000000;
+  }
+}
+
+@keyframes hide-arrow-border {
+  from {
+    border-bottom-color: #000000;
+    border-left-color: #000000;
+  }
+  to {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+#about-box > p:nth-of-type(2) {
+  color: #999999;
 }
 
 @keyframes fade-in {
@@ -149,10 +161,6 @@ a {
 @keyframes fade-out {
   from { opacity: 1; }
   to { opacity: 0; }
-}
-
-#about-box > p:nth-of-type(2) {
-  color: #999999;
 }
 
 #frontend-header {
