@@ -115,7 +115,7 @@ a {
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;
-  transform: rotate(45deg) translateY(-15px);
+  transform: rotate(135deg) translateY(15px);
   z-index: 1;
 }
 
@@ -656,15 +656,9 @@ section.hide .techs > span {
     justify-items: start;
   }
 
-  #about-box:before {
-    top: 50%;
-    left: 0;
-    transform: rotate(45deg) translateX(-15px);
-  }
-
   #about-box:after {
     top: 50%;
-    left: 1px;
+    left: 1px;  
     transform: rotate(45deg) translateX(-15px);
   }
 
