@@ -65,6 +65,11 @@ a {
   transform: scale(0.8);
 }
 
+.animation-wrapper div,
+.animation-wrapper span {
+  border: 1px solid #000000;
+}
+
 #about img {
   width: 200px;
   height: auto;
@@ -260,7 +265,7 @@ a {
   left: 10%;
   height: 3px;
   background-color: #D3D3D3;
-  border-radius: 4px;
+  opacity: 0;
 }
 
 #frontend-body-left > span:nth-last-of-type(1) {
@@ -290,13 +295,31 @@ a {
 }
 
 @keyframes frontend-body-left-text {
-  0% { width: 0; }
-  100% { width: 70%; }
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    width: 70%;
+    opacity: 1;
+  }
 }
 
 @keyframes frontend-body-left-text-reversed {
-  0% { width: 70%; }
-  100% { width: 0; }
+  0% {
+    width: 70%;
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
 }
 
 #frontend-body-right {
@@ -357,7 +380,6 @@ a {
   width: 90px;
   height: 60%;
   background-color: #EEEEEE;
-  border-radius: 4px;
   opacity: 0;
 }
 
