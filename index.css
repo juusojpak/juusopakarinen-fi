@@ -3,9 +3,10 @@
   --shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-dark: 1px 1px 5px rgba(0, 0, 0, 0.4);
   --about-duration: 0.75s;
-  --frontend-duration: 1.5s;
+  --frontend-duration: 1.25s;
   --backend-duration: 0.75s;
-  --mobile-duration: 1s;
+  --mobile-boot-duration: 1s;
+  --mobile-content-duration: 2s;
   --tech-interval: 0.5s;
 }
 
@@ -228,20 +229,20 @@ a {
   opacity: 0;
 }
 
-#frontend-body-left > span:nth-last-of-type(1) {
+#frontend-body-left > span:nth-of-type(1) {
   max-width: 40%;
 }
 
-#frontend-body-left > span:nth-last-of-type(2) {
+#frontend-body-left > span:nth-of-type(2) {
   top: 20px;
 }
 
-#frontend-body-left > span:nth-last-of-type(3) {
+#frontend-body-left > span:nth-of-type(3) {
   top: 30px;
   max-width: 55%;
 }
 
-#frontend-body-left > span:nth-last-of-type(4) {
+#frontend-body-left > span:nth-of-type(4) {
   top: 40px;
   max-width: 60%;
 }
@@ -307,28 +308,28 @@ a {
   opacity: 0;
 }
 
-#frontend-body-right > span:nth-last-of-type(1) {
+#frontend-body-right > span:nth-of-type(1) {
   left: 20px;
 }
 
-#frontend-body-right > span:nth-last-of-type(2) {
+#frontend-body-right > span:nth-of-type(2) {
   right: 20px;
 }
 
 #frontend.show #frontend-body-right > span {
-  animation: calc(var(--frontend-duration) * 1) var(--frontend-duration) forwards fade-in
+  animation: var(--frontend-duration) var(--frontend-duration) forwards fade-in
 }
 
 #frontend.hide #frontend-body-right > span {
   animation: var(--frontend-duration) var(--frontend-duration) forwards fade-out;
 }
 
-#frontend.show #frontend-body-right > span:nth-last-of-type(2) {
-  animation-delay: calc(var(--frontend-duration) * 1.5);
+#frontend.show #frontend-body-right > span:nth-of-type(2) {
+  animation-delay: calc(var(--frontend-duration) * 1.25);
 }
 
-#frontend.hide #frontend-body-right > span:nth-last-of-type(2) {
-  animation-delay: calc(var(--frontend-duration) * 1.5);
+#frontend.hide #frontend-body-right > span:nth-of-type(2) {
+  animation-delay: calc(var(--frontend-duration) * 1.25);
 }
 
 #backend-block-1 {
@@ -438,27 +439,30 @@ a {
 }
 
 #mobile-frame {
-  position: relative;
-  width: 100%;
+  width: 150px;
   height: 100%;
-  padding: 20px 20px 40px;
-  background-color: #888888;
-  border-radius: 10px;
+  margin: 0 auto;
+  padding: 8px;
+  background-color: #444444;
+  border-radius: 12px;
   box-sizing: border-box;
 }
 
 #mobile-screen {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: black;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 #mobile.show #mobile-screen {
-  animation: var(--mobile-duration) forwards mobile-screen-boot;
+  animation: var(--mobile-boot-duration) forwards mobile-screen-boot;
 }
 
 #mobile.hide #mobile-screen {
-  animation: var(--mobile-duration) forwards mobile-screen-shutdown;
+  animation: var(--mobile-boot-duration) forwards mobile-screen-shutdown;
 }
 
 @keyframes mobile-screen-boot {
@@ -477,43 +481,72 @@ a {
 
 #mobile-screen > span {
   position: absolute;
-  left: 40px;
-  width: calc(100% - 80px);
-  height: 40px;
-  background-color: lightgrey;
+  left: 10%;
+  width: 80%;
+  height: 50px;
+  background-color: #EDEDED;
   border-radius: 4px;
   opacity: 0;
 }
 
+#mobile-screen > span:nth-of-type(1) {
+  top: 20px;
+}
+
+#mobile-screen > span:nth-of-type(2) {
+  top: 80px;
+}
+
+#mobile-screen > span:nth-of-type(3) {
+  top: 140px;
+}
+
+#mobile-screen > span:nth-of-type(4) {
+  top: 200px;
+}
+
+#mobile-screen > span:nth-of-type(5) {
+  top: 260px;
+}
+
+#mobile-screen > span:nth-of-type(6) {
+  top: 320px;
+}
+
+#mobile-screen > span:nth-of-type(7) {
+  top: 380px;
+}
+
+#mobile-screen > span:nth-of-type(8) {
+  top: 440px;
+}
+
+#mobile-screen > span:nth-of-type(9) {
+  top: 500px;
+}
+
+#mobile-screen > span:nth-of-type(10) {
+  top: 560px;
+}
+
 #mobile.show #mobile-screen > span {
-  animation: var(--mobile-duration) var(--mobile-duration) forwards fade-in;
+  animation: var(--mobile-content-duration) var(--mobile-boot-duration) forwards mobile-screen-content;
 }
 
 #mobile.hide #mobile-screen > span {
-  animation: var(--mobile-duration) var(--mobile-duration) forwards fade-out;
+  animation: var(--mobile-content-duration) var(--mobile-boot-duration) forwards mobile-screen-content-reversed;
 }
 
-#mobile-screen > span:nth-last-of-type(1) {
-  top: 20%;
+@keyframes mobile-screen-content {
+  0% { opacity: 0; }
+  20%, 70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; transform: translateY(-360px); ; animation-timing-function: ease-in-out; }
 }
 
-#mobile-screen > span:nth-last-of-type(2) {
-  top: 40%;
-}
-
-#mobile-screen > span:nth-last-of-type(3) {
-  top: 60%;
-}
-
-#mobile-button {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  width: 20px;
-  height: 20px;
-  background-color: black;
-  border-radius: 50%;
-  transform: translate(-50%, 40%);
+@keyframes mobile-screen-content-reversed {
+  0% { opacity: 1; ; transform: translateY(-360px); animation-timing-function: ease-in-out; }
+  20%, 70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; }
 }
 
 #contact > .section-wrapper > *:first-child {
@@ -600,7 +633,7 @@ section.hide .techs > span {
 @media screen and (min-width: 800px) {
   .section-wrapper {
     display: grid;
-    grid-column-gap: 150px;
+    grid-column-gap: 100px;
     grid-template-columns: min-content minmax(min-content, 600px);
     align-content: center;
     justify-items: center;
