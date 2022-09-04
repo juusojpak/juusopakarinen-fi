@@ -154,7 +154,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  height: 20%;
+  height: 10%;
   background-color: #EAEAEA;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
@@ -202,76 +202,13 @@ a {
   }
 }
 
-#frontend-header > span {
-  position: absolute;
-  top: 25%;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-#frontend.show #frontend-header > span {
-  animation: var(--frontend-duration) forwards frontend-header-ball;
-}
-
-#frontend.hide #frontend-header > span {
-  animation: var(--frontend-duration) forwards frontend-header-ball-reversed;
-}
-
-#frontend-header > span:nth-last-of-type(1) {
-  background-color: #DC5770;
-  left: 5%;
-}
-
-#frontend-header > span:nth-last-of-type(2) {
-  background-color: #EFCE30;
-  left: 15%;
-}
-
-#frontend-header > span:nth-last-of-type(3) {
-  background-color: #5ABD5A;
-  left: 25%;
-}
-
-@keyframes frontend-header-ball {
-  0% {
-    box-shadow: var(--shadow-dark);
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  80% {
-    box-shadow: var(--shadow-light);
-  }
-  100% {
-    box-shadow: none;
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes frontend-header-ball-reversed {
-  0% {
-    box-shadow: none;
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  80% {
-    box-shadow: var(--shadow-light);
-  }
-  100% {
-    box-shadow: var(--shadow-dark);
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-}
-
 #frontend-body-left {
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 0;
-  width: 80%;
+  width: 20%;
   height: 80%;
-  background-color: #A4E4CF;
+  background-color: #F3F3F3;
   border-bottom-left-radius: 4px;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -317,13 +254,58 @@ a {
   }
 }
 
+#frontend-body-left > span {
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  height: 3px;
+  background-color: #D3D3D3;
+  border-radius: 4px;
+}
+
+#frontend-body-left > span:nth-last-of-type(1) {
+  max-width: 40%;
+}
+
+#frontend-body-left > span:nth-last-of-type(2) {
+  top: 20px;
+}
+
+#frontend-body-left > span:nth-last-of-type(3) {
+  top: 30px;
+  max-width: 55%;
+}
+
+#frontend-body-left > span:nth-last-of-type(4) {
+  top: 40px;
+  max-width: 60%;
+}
+
+#frontend.show #frontend-body-left > span {
+  animation: 1s calc(var(--frontend-duration) * 0.8) forwards frontend-body-left-text;
+}
+
+#frontend.hide #frontend-body-left > span {
+  animation: 1s calc(var(--frontend-duration) * 0.8) forwards frontend-body-left-text-reversed;
+}
+
+@keyframes frontend-body-left-text {
+  0% { width: 0; }
+  100% { width: 70%; }
+}
+
+@keyframes frontend-body-left-text-reversed {
+  0% { width: 70%; }
+  100% { width: 0; }
+}
+
 #frontend-body-right {
   position: absolute;
-  top: 20%;
-  left: 80%;
-  width: 20%;
+  top: 10%;
+  left: 20%;
+  width: 80%;
   height: 80%;
-  background-color: #FFE791;
+  background-color: #FAFAFA;
   border-bottom-right-radius: 4px;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -367,6 +349,40 @@ a {
     opacity: 0;
     transform: translate(30px, 40px);
   }
+}
+
+#frontend-body-right > span {
+  position: absolute;
+  top: 20px;
+  width: 90px;
+  height: 60%;
+  background-color: #EEEEEE;
+  border-radius: 4px;
+  opacity: 0;
+}
+
+#frontend-body-right > span:nth-last-of-type(1) {
+  left: 20px;
+}
+
+#frontend-body-right > span:nth-last-of-type(2) {
+  right: 20px;
+}
+
+#frontend.show #frontend-body-right > span {
+  animation: calc(var(--frontend-duration) * 1) var(--frontend-duration) forwards fade-in
+}
+
+#frontend.hide #frontend-body-right > span {
+  animation: var(--frontend-duration) var(--frontend-duration) forwards fade-out;
+}
+
+#frontend.show #frontend-body-right > span:nth-last-of-type(2) {
+  animation-delay: calc(var(--frontend-duration) * 1.5);
+}
+
+#frontend.hide #frontend-body-right > span:nth-last-of-type(2) {
+  animation-delay: calc(var(--frontend-duration) * 1.5);
 }
 
 #backend-block-1 {
@@ -639,10 +655,10 @@ section.hide .techs > span {
 
 @media screen and (min-width: 800px) {
   .section-wrapper {
-    align-content: center;
     display: grid;
     grid-column-gap: 150px;
     grid-template-columns: min-content minmax(min-content, 600px);
+    align-content: center;
     justify-items: center;
   }
 
@@ -656,14 +672,14 @@ section.hide .techs > span {
   }
 
   #about-box:before {
-    left: 0;
     top: 50%;
+    left: 0;
     transform: rotate(45deg) translateX(-15px);
   }
 
   #about-box:after {
-    left: 1px;
     top: 50%;
+    left: 1px;
     transform: rotate(45deg) translateX(-15px);
   }
 
